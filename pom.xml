@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.project</groupId>
-	<artifactId>trading-system</artifactId>
+	<artifactId>springboot-crypto-trading</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-trading-system</name>
-	<description>trading-system for Spring Boot</description>
+	<name>springboot-crypto-trading</name>
+	<description>crypto trading with Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
