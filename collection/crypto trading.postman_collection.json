@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "f8045389-84d8-4c11-b06a-93ad0cc275aa",
+		"name": "crypto trading",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12839116"
+	},
+	"item": [
+		{
+			"name": "retrieve latest best aggregated price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/cryptos/"
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve aggregated price from source",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/cryptos/retrieve"
+			},
+			"response": []
+		},
+		{
+			"name": "trade cryptos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountRequestDTO\": {\r\n        \"id\": 1\r\n    },\r\n    \"tradeRequestDTOs\": [\r\n        {\r\n            \"symbol\": \"ETHUSDT\",\r\n            \"individualPrice\": 0.24141,\r\n            \"quantity\": 44,\r\n            \"buySell\": \"SELL\"\r\n        },\r\n        {\r\n            \"symbol\": \"BTCUSDT\",\r\n            \"individualPrice\": 0.34535,\r\n            \"quantity\": 54,\r\n            \"buySell\": \"BUY\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/transactions/trade"
+			},
+			"response": []
+		},
+		{
+			"name": "get account information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/accounts/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get transaction history by account Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/transactions/account/1"
+			},
+			"response": []
+		}
+	]
+}
