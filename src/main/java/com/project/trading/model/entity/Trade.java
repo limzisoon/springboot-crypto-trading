@@ -33,7 +33,6 @@ public class Trade
     @Column
     private String buySell;
 
-
-    @ManyToOne(fetch = FetchType.EAGER , cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Transaction transaction;
 }

@@ -35,7 +35,8 @@ public class TransactionService {
         BeanUtils.copyProperties(accountRequestDTO, account);
 
         List<TradeRequestDTO> tradeDtoList = transactionRequestDTO.getTradeRequestDTOs();
-        Set<Trade> sellTradesSet = new HashSet<>();
+        List<Trade> sellTradesSet = new ArrayList<>();
+
         Double totalSell = new Double(0);
         Double totalBuy = new Double(0);
         for(TradeRequestDTO tradeRequestDTO: tradeDtoList)
@@ -64,6 +65,7 @@ public class TransactionService {
                 .timestampdate(new Date())
                 .allTrades(sellTradesSet)
                 .build();
+
         Transaction currenTransaction = transactionRepository.save(trx);
 
         //trade buy/sale cryptos, deduct/add into wallet

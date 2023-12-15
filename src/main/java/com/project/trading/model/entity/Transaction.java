@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -28,8 +29,8 @@ public class Transaction
     @Column
     private double totalPrice;
 
-    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER, mappedBy = "transaction")
-    private Set<Trade> allTrades;
+    @OneToMany(mappedBy = "transaction", cascade = CascadeType.ALL)
+    private List<Trade> allTrades;
 
     @Column
     private Integer accountId;
